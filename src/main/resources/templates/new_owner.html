@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title> Pet Clinic Management System</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+</head>
+<body>
+<div class = "container">
+  <h1> Pet Clinic Management System</h1>
+  <hr>
+  <h2> Add Pet Owner </h2>
+
+  <form action = "#" th:action="@{/owners/saveOwner}" th:object = "${owner}" method="POST">
+    <input type = "text" th:field="*{name}" placeholder="Pet Owner First Name" class="form-control mb-4 col-4">
+
+    <input type = "text" th:field="*{surname}" placeholder="Pet Owner Last Name" class="form-control mb-4 col-4">
+    <input type = "text" th:field="*{address}" placeholder="Pet Owner Address" class="form-control mb-4 col-4">
+    <input type = "text" th:field="*{phone_number}" placeholder="Pet Owner Phone Number" class="form-control mb-4 col-4">
+    <input type = "text" th:field="*{e_mail}" placeholder="Pet Owner E-mail" class="form-control mb-4 col-4">
+    <!--<input type = "text" th:field="*{pets_id}" placeholder="Employee Email" class="form-control mb-4 col-4"> -->
+
+    <button type="submit" class="btn btn-info col-2">Add Pet Owner</button>
+  </form>
+
+</div>
+
+</body>
+</html>
