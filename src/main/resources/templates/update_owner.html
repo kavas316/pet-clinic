@@ -12,19 +12,13 @@
   <h2> Update Pet Owner </h2>
 
   <form action = "#" th:action="@{/owners/saveOwner}" th:object = "${owner}" method="POST">
-
     <input type="hidden" th:field="*{id}"/>
     <input type = "text" th:field="*{name}" placeholder="Pet Owner First Name" class="form-control mb-4 col-4">
-
     <input type = "text" th:field="*{surname}" placeholder="Pet Owner Last Name" class="form-control mb-4 col-4">
     <input type = "text" th:field="*{address}" placeholder="Pet Owner Address" class="form-control mb-4 col-4">
     <input type = "text" th:field="*{phone_number}" placeholder="Pet Owner Phone Number" class="form-control mb-4 col-4">
     <input type = "text" th:field="*{e_mail}" placeholder="Pet Owner E-mail" class="form-control mb-4 col-4">
-
     <button type="submit" class="btn btn-info col-2"> Update Pet Owner</button>
-    <button type="danger" class="btn btn-info col-2"> Back to Pet Owner List</button>
-
-
   </form>
 
   <a th:href="@{/owners/list}"> Back To Pet Owner List</a>
