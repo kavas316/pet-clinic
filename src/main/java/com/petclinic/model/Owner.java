@@ -1,6 +1,7 @@
 package com.petclinic.model;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "owners")
@@ -25,8 +26,9 @@ public class Owner {
     @Column(name="e_mail")
     private String e_mail;
 
-    @Column(name="pets_id")
-    private int pets_id;
+    @OneToMany(targetEntity = Pets.class,cascade = CascadeType.ALL)
+    @JoinColumn(name = "pet_id",referencedColumnName = "id")
+    private List<Pets> pets;
 
     public int getId() {
         return id;
@@ -76,11 +78,4 @@ public class Owner {
         this.e_mail = e_mail;
     }
 
-    public int getPets_id() {
-        return pets_id;
-    }
-
-    public void setPets_id(int pets_id) {
-        this.pets_id = pets_id;
-    }
 }
