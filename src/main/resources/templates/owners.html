@@ -32,7 +32,9 @@
             <td th:text="${owner.address}"></td>
             <td th:text="${owner.phone_number}"></td>
             <td th:text="${owner.e_mail}"></td>
-            <td th:text="${owner.pets_id}">
+            <td th:text="${owner.pets_id}"></td>
+            <td> <a th:href="@{/owners/updateOwner/{id}(id=${owner.id})}" class = "btn- btn-primary btn-sm mb-3">Update</a>
+                <a th:href="@{/owners/deleteOwner/{id}(id=${owner.id})}" class = "btn- btn-danger btn-sm mb-3">Delete</a></td>
         </tr>
         </tbody>
     </table>

@@ -33,7 +33,7 @@ public class OwnerController {
         return "redirect:/";
     }
 
-    @GetMapping("/updateOwner")
+    @GetMapping("/updateOwner/{id}")
     public String updateOwner(@PathVariable(name ="id")int id, Model model){
         Owner owner = ownerService.getOwnerById(id);
         model.addAttribute("owner",owner);
