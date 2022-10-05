@@ -40,10 +40,10 @@ public class OwnerController {
         return "update_owner";
     }
 
-    @DeleteMapping("/deleteOwner/{id}")
+    @GetMapping("/deleteOwner/{id}")
     public String deleteOwner(@PathVariable(name = "id")int id){
         this.ownerService.deleteOwner(id);
-        return "redirect:/";
+        return "owners";
     }
     }
 

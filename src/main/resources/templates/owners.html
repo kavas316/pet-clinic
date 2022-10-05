@@ -36,8 +36,10 @@
             <td> <a th:href="@{/owners/updateOwner/{id}(id=${owner.id})}" class = "btn- btn-primary btn-sm mb-3">Update</a>
                 <a th:href="@{/owners/deleteOwner/{id}(id=${owner.id})}" class = "btn- btn-danger btn-sm mb-3">Delete</a></td>
         </tr>
+            <a th:href = "@{/owners/new}" class="btn- btn-primary btn-sm mb-3"> Add New Pet Owner</a>
         </tbody>
     </table>
 </div>
+
 </body>
 </html>
