@@ -26,7 +26,7 @@ public class Pets {
     @Column(name = "desc")
     private String desc;
 
-    @ManyToOne
+    @OneToOne
     @JoinColumn(name="owner_id")
     private Owner owner;
 
