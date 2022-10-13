@@ -11,23 +11,24 @@ public class Pets {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @Column(name = "pet_ name")
-    private String pet_name;
+    @Column(name = "name")
+    private String name;
 
-    @Column(name = "pet_species")
-    private String pet_species;
+    @Column(name = "species")
+    private String species;
 
-    @Column(name = "pet_genus")
-    private String pet_genus;
+    @Column(name = "genus")
+    private String genus;
 
-    @Column(name = "pet_old")
-    private int pet_old;
+    @Column(name = "old")
+    private int old;
 
-    @Column(name = "pet_desc")
-    private String pet_desc;
+    @Column(name = "desc")
+    private String desc;
 
-
-
+    @ManyToOne
+    @JoinColumn(name="owner_id")
+    private Owner owner;
 
     public int getId() {
         return id;
@@ -37,43 +38,51 @@ public class Pets {
         this.id = id;
     }
 
-    public String getPet_name() {
-        return pet_name;
+    public Owner getOwner() {
+        return owner;
     }
 
-    public void setPet_name(String pet_name) {
-        this.pet_name = pet_name;
+    public void setOwner(Owner owner) {
+        this.owner = owner;
     }
 
-    public String getPet_species() {
-        return pet_species;
+    public String getName() {
+        return name;
     }
 
-    public void setPet_species(String pet_species) {
-        this.pet_species = pet_species;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getPet_genus() {
-        return pet_genus;
+    public String getSpecies() {
+        return species;
     }
 
-    public void setPet_genus(String pet_genus) {
-        this.pet_genus = pet_genus;
+    public void setSpecies(String species) {
+        this.species = species;
     }
 
-    public int getPet_old() {
-        return pet_old;
+    public String getGenus() {
+        return genus;
     }
 
-    public void setPet_old(int pet_old) {
-        this.pet_old = pet_old;
+    public void setGenus(String genus) {
+        this.genus = genus;
     }
 
-    public String getPet_desc() {
-        return pet_desc;
+    public int getOld() {
+        return old;
     }
 
-    public void setPet_desc(String pet_desc) {
-        this.pet_desc = pet_desc;
+    public void setOld(int old) {
+        this.old = old;
+    }
+
+    public String getDesc() {
+        return desc;
+    }
+
+    public void setDesc(String desc) {
+        this.desc = desc;
     }
 }

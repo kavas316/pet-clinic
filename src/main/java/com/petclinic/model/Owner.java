@@ -11,7 +11,7 @@ public class Owner {
     @GeneratedValue(strategy = GenerationType.AUTO) // id for AUTOINCREMENT.
     private int id;
 
-    @Column(name="first_name")
+    @Column(name="name")
     private String name;
 
     @Column(name="surname")
@@ -26,9 +26,6 @@ public class Owner {
     @Column(name="e_mail")
     private String e_mail;
 
-    @OneToMany(targetEntity = Pets.class,cascade = CascadeType.ALL)
-    @JoinColumn(name = "pet_id",referencedColumnName = "id")
-    private List<Pets> pets;
 
     public int getId() {
         return id;
