@@ -8,8 +8,6 @@
 
 </head>
 <body>
-
-
 <div class = "container my-2">
 
     <h1>Pets List</h1>
@@ -32,11 +30,14 @@
             <td th:text="${pet.genus}"></td>
             <td th:text="${pet.old}"></td>
             <td th:text="${pet.desc}"></td>
-             <td> <a th:href="@{/owners/updateOwner/{id}(id=${pet.owner.id})}" th:text="${pet.owner.name}+ '  ' + ${pet.owner.surname}" class = "btn btn-primary btn-sm mb-3"></a></td>
+            <td> <a th:href="@{/owners/updateOwner/{id}(id=${pet.owner.id})}" th:text="${pet.owner.name}+ '  ' + ${pet.owner.surname}" class = "btn btn-primary btn-sm mb-3"></a></td>
+            <td> <a th:href="@{/pets/updatePet/{id}(id=${pet.id})}" class = "btn- btn-primary btn-sm mb-3">Update</a></td>
         </tr>
-        <a th:href = "@{/owners/new}" class="btn- btn-primary btn-sm mb-3"> Add New Pet Owner</a>
+
         </tbody>
     </table>
+
+    <a th:href = "@{/pets/new}" class="btn- btn-primary btn-sm mb-3" th:onclick = "if(!(confirm('Is the owner of the pet registered?  ?') )) return false"> Add New Pet</a>
 </div>
 
 </body>
