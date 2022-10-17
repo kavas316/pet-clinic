@@ -6,6 +6,8 @@ import com.petclinic.model.Pets;
 import com.petclinic.repository.OwnerRepository;
 import com.petclinic.repository.PetsRepository;
 import com.petclinic.service.PetsService;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -29,6 +31,7 @@ public class PetController {
     @GetMapping("/list")
     public String viewAllPets(Model model){
         model.addAttribute("listPet"+"s",petsService.getAllPets());
+
         return "pets";
     }
 
@@ -55,6 +58,17 @@ public class PetController {
         return "update_pet";
     }
 
+    @GetMapping("/deletePet/{id}")
+    public String deleteOwner(@PathVariable(name = "id")int id){
+        Pets pet = petsService.getPetById(id);
+        if(pet != null){
+            pet.setOwner(null);
+            this.petsService.deletePet(id);
+        }else{
+            return "redirect:/pets/list";
+        }
 
+        return "redirect:/pets/list";
+    }
 
 }

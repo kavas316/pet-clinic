@@ -31,7 +31,8 @@
             <td th:text="${pet.old}"></td>
             <td th:text="${pet.desc}"></td>
             <td> <a th:href="@{/owners/updateOwner/{id}(id=${pet.owner.id})}" th:text="${pet.owner.name}+ '  ' + ${pet.owner.surname}" class = "btn btn-primary btn-sm mb-3"></a></td>
-            <td> <a th:href="@{/pets/updatePet/{id}(id=${pet.id})}" class = "btn- btn-primary btn-sm mb-3">Update</a></td>
+            <td> <a th:href="@{/pets/updatePet/{id}(id=${pet.id})}" class = "btn- btn-primary btn-sm mb-3">Update</a>
+             <a th:href="@{/pets/deletePet/{id}(id=${pet.id})}" class = "btn- btn-danger btn-sm mb-3">Delete</a></td>
         </tr>
 
         </tbody>

@@ -1,9 +1,11 @@
 package com.petclinic.service;
 
 
+import com.petclinic.model.Owner;
 import com.petclinic.model.Pets;
 import com.petclinic.repository.PetsRepository;
 import org.springframework.stereotype.Component;
+import org.springframework.web.bind.annotation.PathVariable;
 
 import java.util.List;
 import java.util.Optional;
