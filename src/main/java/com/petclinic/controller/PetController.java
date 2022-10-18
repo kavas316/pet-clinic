@@ -29,9 +29,15 @@ public class PetController {
     }
 
     @GetMapping("/list")
-    public String viewAllPets(Model model){
-        model.addAttribute("listPet"+"s",petsService.getAllPets());
+    public String viewAllPets(Model model,String keyword){
 
+        if(keyword != null){
+            model.addAttribute("listPet"+"s",petsService.findByKeyword(keyword));
+
+        }
+        else{
+            model.addAttribute("listPet"+"s",petsService.getAllPets());
+        }
         return "pets";
     }
 

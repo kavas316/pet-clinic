@@ -19,6 +19,9 @@ public class PetsServiceImpl implements PetsService {
         this.petsRepository = petsRepository;
     }
 
+    public List<Pets> findByKeyword(String keyword){
+        return petsRepository.findByKeyword(keyword);
+    }
 
     public List<Pets> getAllPets(){
         return petsRepository.findAll();

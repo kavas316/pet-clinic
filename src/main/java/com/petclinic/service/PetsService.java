@@ -13,4 +13,8 @@ public interface PetsService {
     void deletePet(int id);
 
     Pets getPetById(int id);
+
+    // Get Pets by Keyword.
+    List<Pets> findByKeyword(String keyword);
+
 }
